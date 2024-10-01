@@ -54,12 +54,6 @@
                         <a data-scroll href="#about" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <a data-scroll href="#pricing" class="nav-link">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a data-scroll href="#blog" class="nav-link">Blog</a>
-                    </li>
-                    <li class="nav-item">
                         <a data-scroll href="#contact" class="nav-link">Contact</a>
                     </li>
 
@@ -68,8 +62,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <button type="button"
-                                class="btn btn-primary navbar-btn btn-rounded waves-effect waves-light">Try it
-                                Free</button>
+                                class="btn btn-primary navbar-btn btn-rounded waves-effect waves-light">Try it for
+                                .17 BTC</button>
                         </li>
                     </ul>
                 </div>
@@ -78,30 +72,21 @@
     </nav>
     <!-- END NAVBAR -->
 
+    <!-- PUT TITLE OF WEBSITE AND MISSION STATEMNT BELOW --TEXT FILE  -->
+
     <!--START HOME-->
     <section class="section bg-home home-half" id="home" data-image-src="images/bg-home.jpg">
         <div class="bg-overlay"></div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-white text-center">
-                    <h4 class="home-small-title">Awesome Design</h4>
                     <h1 class="home-title">We love make things amazing and simple</h1>
                     <p class="pt-3 home-desc mx-auto">Maecenas class semper class semper sollicitudin lectus lorem
                         iaculis imperdiet aliquam vehicula tempor auctor curabitur pede aenean ornare.</p>
-                    <p class="play-shadow mt-4" data-bs-toggle="modal" data-bs-target="#watchvideomodal"><a
-                            href="javascript: void(0);" class="play-btn video-play-icon"><i
-                                class="mdi mdi-play text-center"></i></a></p>
-
                     <!-- Modal -->
                     <div class="modal fade" id="watchvideomodal"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
                             <div class="modal-content">
-                                <div class="modal-body p-0" style="margin-bottom: -8px;">
-                                    <video id="VisaChipCardVideo" class="video-box" controls  width="800" >
-                                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" >
-                                        <!--Browser does not support <video> tag -->
-                                    </video>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -110,38 +95,10 @@
         </div>
     </section>
     <!--END HOME-->
-
-    <!-- CLIENT LOGO -->
-    <section class="section-sm bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="client-images my-3 my-md-0">
-                        <img src="images/clients/1.png" alt="logo-img" class="mx-auto img-fluid d-block">
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="client-images my-3 my-md-0">
-                        <img src="images/clients/2.png" alt="logo-img" class="mx-auto img-fluid d-block">
-                    </div>
-                </div>
-
-                <div class="col-md-3 ">
-                    <div class="client-images my-3 my-md-0">
-                        <img src="images/clients/3.png" alt="logo-img" class="mx-auto img-fluid d-block">
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="client-images my-3 my-md-0">
-                        <img src="images/clients/4.png" alt="logo-img" class="mx-auto img-fluid d-block">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END CLIENT LOGO -->
+    
+    <!-- PUT TITLE OF WEBSITE AND MISSION STATEMNT ABOVE --TEXT FILE -->
+    
+    <!-- PUT OVERVIEW BELOW SOMEHOW -- TEXT FILE -->
 
     <!--START FEATURES-->
     <section class="section" id="features">
@@ -170,6 +127,10 @@
         </div>
     </section>
     <!--END FEATURES-->
+    
+    <!-- PUT OVERVIEW ABOVE SOMEHOW -- TEXT FILE -->
+        
+    <!--SERVICES BELOW-- JSON FILE -->
 
     <!--START SERVICES-->
     <section class="section bg-light " id="services">
@@ -301,22 +262,10 @@
         </div>
     </section>
     <!--START SERVICES-->
-
-    <!--START WEBSITE-DESCRIPTION-->
-    <section class="section bg-web-desc">
-        <div class="bg-overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="text-white">Build your dream website today</h2>
-                    <p class="pt-3 home-desc mx-auto">But nothing the copy said could convince her and so it didn’t take
-                        long until a few insidious Copy Writers ambushed her.</p>
-                    <a href="#" class="btn btn-light mt-5 waves-effect waves-light">View Plan & Pricing</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--END WEBSITE-DESCRIPTION-->
+    
+    <!--SERVICES ABOVE-- JSON FILE -->
+    
+    <!--TEAM BELOW -- CSV FILE -->
 
     <!--START ABOUT-US-->
     <section class="section" id="about">
@@ -386,70 +335,10 @@
         </div>
     </section>
     <!--END ABOUT-US-->
-
-    <!--START PRICING-->
-    <section class="section bg-light" id="pricing">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <h1 class="section-title text-center">Our Pricing</h1>
-                    <div class="section-title-border mt-3"></div>
-                    <p class="section-subtitle font-secondary text-muted text-center pt-4">Call to action pricing table
-                        is really crucial to your for your business website. Make your bids stand-out with amazing
-                        options.</p>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-lg-4">
-                    <div class="text-center pricing-box">
-                        <h4 class="text-uppercase">Economy</h4>
-                        <h1>$9.90</h1>
-                        <h6 class="text-uppercase text-muted">Billing Per Month</h6>
-                        <div class="plan-features mt-5">
-                            <p>Bandwidth: <b class="text-primary">1GB</b></p>
-                            <p>Onlinespace: <b class="text-primary">50MB</b></p>
-                            <p>Support: <b class="text-primary">No</b></p>
-                            <p><b class="text-primary">1</b> Domain</p>
-                            <p><b class="text-primary">No</b> Hidden Fees</p>
-                        </div>
-                        <a href="#" class="btn btn-primary waves-effect waves-light mt-5">Join Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="text-center pricing-box price-active">
-                        <div class="ribbon-box"><span>Popular</span></div>
-                        <h4 class="text-uppercase">Deluxe</h4>
-                        <h1>$19.90</h1>
-                        <h6 class="text-uppercase text-muted">Billing Per Month</h6>
-                        <div class="plan-features mt-5">
-                            <p>Bandwidth: <b class="text-primary">10GB</b></p>
-                            <p>Onlinespace: <b class="text-primary">500MB</b></p>
-                            <p>Support: <b class="text-primary">Yes</b></p>
-                            <p><b class="text-primary">10</b> Domain</p>
-                            <p><b class="text-primary">No</b> Hidden Fees</p>
-                        </div>
-                        <a href="#" class="btn btn-primary waves-effect waves-light mt-5">Join Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="text-center pricing-box">
-                        <h4 class="text-uppercase">Ultimate</h4>
-                        <h1>$29.90</h1>
-                        <h6 class="text-uppercase text-muted">Billing Per Month</h6>
-                        <div class="plan-features mt-5">
-                            <p>Bandwidth: <b class="text-primary">100GB</b></p>
-                            <p>Onlinespace: <b class="text-primary">2 GB</b></p>
-                            <p>Support: <b class="text-primary">Yes</b></p>
-                            <p><b class="text-primary">Unlimited</b> Domain</p>
-                            <p><b class="text-primary">No</b> Hidden Fees</p>
-                        </div>
-                        <a href="#" class="btn btn-primary waves-effect waves-light mt-5">Join Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--ENd PRICING-->
+    
+    <!--TEAM ABOVE -- CSV FILE -->
+    
+    <!--CHANGE REVIEWS TO AWARDS BELOW -- CSV FILE -->
 
     <!--START TESTIMONIAL-->
     <section class="section" id="testi">
@@ -528,89 +417,8 @@
         </div>
     </section>
     <!--END TESTIMONIAL-->
-
-    <!--START GET STARTED-->
-    <section class="section section-lg bg-get-start">
-        <div class="bg-overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center">
-                    <h1 class="get-started-title text-white">Let's Get Started</h1>
-                    <div class="section-title-border mt-4 bg-white"></div>
-                    <p class="section-subtitle font-secondary text-white text-center pt-4">Far far away, behind the word
-                        mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <a href="#" class="btn btn-light waves-effect mt-4">Get Started <i class="mdi mdi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--END GET STARTED-->
-
-    <!-- START BLOG -->
-    <section class="section " id="blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <h1 class="section-title text-center">Latest News</h1>
-                    <div class="section-title-border mt-3"></div>
-                    <p class="section-subtitle text-muted text-center font-secondary pt-4">Separated they live in
-                        Bookmarksgrove right at the coast of the Semantics, a large language ocean class at a euismod
-                        mus luctus quam.</p>
-                </div>
-            </div>
-
-            <div class="row mt-4">
-                <div class="col-lg-4">
-                    <div class="blog-box mt-4">
-                        <img src="images/blog/img-1.jpg" class="img-fluid rounded" alt="">
-                        <div>
-                            <h5 class="mt-4 text-muted">UI & UX Design</h5>
-                            <h4 class="mt-3"><a href="" class="blog-title"> Doing a cross country road trip </a></h4>
-                            <p class="text-muted">She packed her seven versalia, put her initial into the belt and made
-                                herself on the way..</p>
-                            <div class="mt-3">
-                                <a href="" class="read-btn">Read More <i class="mdi mdi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="blog-box mt-4">
-                        <img src="images/blog/img-2.jpg" class="img-fluid rounded" alt="">
-                        <div>
-                            <h5 class="mt-4 text-muted">Digital Marketing</h5>
-                            <h4 class="mt-3"><a href="" class="blog-title">New exhibition at our Museum</a></h4>
-                            <p class="text-muted">Pityful a rethoric question ran over her cheek, then she continued her
-                                way.</p>
-                            <div class="mt-3">
-                                <a href="" class="read-btn">Read More <i class="mdi mdi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="blog-box mt-4">
-                        <img src="images/blog/img-3.jpg" class="img-fluid rounded" alt="">
-                        <div>
-                            <h5 class="mt-4 text-muted">Travelling</h5>
-                            <h4 class="mt-3"><a href="" class="blog-title">Why are so many people..</a></h4>
-                            <p class="text-muted">Far far away, behind the word mountains, far from the countries
-                                Vokalia and Consonantia.</p>
-                            <div class="mt-3">
-                                <a href="" class="read-btn">Read More <i class="mdi mdi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-    <!-- END BLOG -->
+    
+    <!--CHANGE REVIEWS TO AWARDS ABOVE -- CSV FILE -->
 
     <!-- CONTACT FORM START-->
     <section class="section " id="contact">
