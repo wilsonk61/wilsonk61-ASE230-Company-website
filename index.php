@@ -1,4 +1,7 @@
+<?php   
+require_once 'lib/text_read_function.php';
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,6 +76,10 @@
     <!-- END NAVBAR -->
 
     <!-- PUT TITLE OF WEBSITE AND MISSION STATEMNT BELOW --TEXT FILE  -->
+	<?php
+		$missionStatementFile = 'Mission_Statement.txt';
+		$MissionStatementContent = readFileContent($missionStatementFile);
+	?>
 
     <!--START HOME-->
     <section class="section bg-home home-half" id="home" data-image-src="images/bg-home.jpg">
@@ -80,9 +87,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-white text-center">
-                    <h1 class="home-title">We love make things amazing and simple</h1>
-                    <p class="pt-3 home-desc mx-auto">Maecenas class semper class semper sollicitudin lectus lorem
-                        iaculis imperdiet aliquam vehicula tempor auctor curabitur pede aenean ornare.</p>
+                    <h1 class="home-title">Our Mission Statement and Promise to You</h1>
+                    <p class="pt-3 home-desc mx-auto"> <?php echo ($MissionStatementContent); ?></p>
                     <!-- Modal -->
                     <div class="modal fade" id="watchvideomodal"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -99,6 +105,11 @@
     <!-- PUT TITLE OF WEBSITE AND MISSION STATEMNT ABOVE --TEXT FILE -->
     
     <!-- PUT OVERVIEW BELOW SOMEHOW -- TEXT FILE -->
+	
+	<?php
+	$OverviewFile = 'Overview.txt';
+	$OverviewContent = readFileContent($OverviewFile);	
+	?>
 
     <!--START FEATURES-->
     <section class="section" id="features">
@@ -106,14 +117,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 order-2 order-lg-1">
                     <div class="features-box mt-5 mt-lg-0">
-                        <h3>A digital web design studio creating modern & engaging online</h3>
-                        <p class="text-muted web-desc">Separated they live in Bookmarksgrove right at the coast of the
-                            Semantics, a large language ocean.</p>
-                        <ul class="text-muted list-unstyled mt-4 features-item-list">
-                            <li class="">We put a lot of effort in design.</li>
-                            <li class="">The most important ingredient of successful website.</li>
-                            <li class="">Submit Your Orgnization.</li>
-                        </ul>
+                        <h3 style="text-align: center;">A Look Into the Future and a Look Into Who we Are</h3>
+                        <p class="text-muted web-desc"><?php echo ($OverviewContent); ?></p>
                         <a href="#" class="btn btn-primary mt-4 waves-effect waves-light">Learn More <i
                                 class="mdi mdi-arrow-right"></i></a>
                     </div>
