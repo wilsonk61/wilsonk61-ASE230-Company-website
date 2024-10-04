@@ -1,4 +1,7 @@
+<?php   
+require_once 'lib/csv_read_function.php';
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -273,64 +276,32 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="about-title mx-auto text-center">
-                        <h2>A Digital web studio creating stunning &amp; Engaging online
-                            Experiences </h2>
-                        <p class="text-muted pt-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                            commodo ligula eget dolor.
-                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus donec various versions have evolved quam felis.</p>
+                        <h2> Our Team </h2>
+                        <p class="text-muted pt-4">Our dynamic team, led by industry pioneers and experts in their respective fields, 
+                        combines innovative vision, technological expertise, and design excellence to drive Starluxe's mission of 
+                        revolutionizing technology and education globally.</p>
                     </div>
                 </div>
             </div>
+            <?php
+				$CSVFile = 'Team.csv';
+				$teamMembers = readCSVFile($CSVFile);
+			?>
             <div class="row mt-5">
+            <?php foreach ($teamMembers as $index => $member) { ?>
                 <div class="col-lg-3 col-sm-6">
                     <div class="team-box text-center">
                         <div class="team-wrapper">
                             <div class="team-member">
-                                <img alt="" src="images/team/img-1.jpg" class="img-fluid rounded">
+                                <img alt="" src="images/team/img-<?= $index + 1 ?>.jpg" class="img-fluid rounded">
                             </div>
                         </div>
-                        <h4 class="team-name">Frank Johnson</h4>
-                        <p class="text-uppercase team-designation">CEO</p>
+                        <h4 class="team-name"><?php echo ($member['Name']); ?></h4> <!-- Name -->
+                    	<p class="text-uppercase team-designation"><?php echo ($member['Position']); ?></p> <!-- Position -->
+                    	<p class="team-description"><?php echo ($member['Description']); ?></p> <!-- Description -->
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-box text-center">
-                        <div class="team-wrapper">
-                            <div class="team-member">
-                                <img alt="" src="images/team/img-2.jpg" class="img-fluid rounded">
-                            </div>
-                        </div>
-                        <h4 class="team-name">Elaine Stclair</h4>
-                        <p class="text-uppercase team-designation">Designer</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-box text-center">
-                        <div class="team-wrapper">
-                            <div class="team-member">
-                                <img alt="" src="images/team/img-3.jpg" class="img-fluid rounded">
-                            </div>
-                        </div>
-                        <h4 class="team-name">Wanda Arthur</h4>
-                        <p class="text-uppercase team-designation">Developer</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-box text-center">
-                        <div class="team-wrapper">
-                            <div class="team-member">
-                                <img alt="" src="images/team/img-4.jpg" class="img-fluid rounded">
-                            </div>
-                        </div>
-                        <h4 class="team-name">Joshua Stemple</h4>
-                        <p class="text-uppercase team-designation">Manager</p>
-                    </div>
-                </div>
-
+				<?php } ?>
             </div>
         </div>
     </section>
@@ -340,79 +311,38 @@
     
     <!--CHANGE REVIEWS TO AWARDS BELOW -- CSV FILE -->
 
+	<?php
+		$CSVFile = 'Awards.csv';
+		$awards = readCSVFile($CSVFile);
+	?>
     <!--START TESTIMONIAL-->
-    <section class="section" id="testi">
+    <section class="section bg-light" id="testi">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <h1 class="section-title text-center">What they've said</h1>
+                    <h1 class="section-title text-center">Awards</h1>
                     <div class="section-title-border mt-3"></div>
-                    <p class="section-subtitle text-muted text-center font-secondary pt-4">The Big Oxmox advised her not
-                        to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli.
+                    <p class="section-subtitle text-muted text-center font-secondary pt-4">We take immense pride in our 
+                    multiple awards, which reflect our commitment to innovation and excellence in technology.
                     </p>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-4">
+            <?php foreach ($awards as $index => $award) { ?>
                 <div class="col-lg-4">
                     <div class="testimonial-box mt-4">
                         <div class="testimonial-decs p-4">
-                            <div class="testi-icon">
-                                <i class="mdi mdi-format-quote-open display-1"></i>
-                            </div>
-                            <img src="images/testimonials/user-1.jpg" alt=""
+                        <img src="images/award.jpg" alt=""
                                 class="img-fluid mx-auto d-block img-thumbnail rounded-circle mb-4">
                             <div class="p-1">
-                                <h5 class="text-center text-uppercase mb-3">Dennis Williams - <span
-                                        class="text-muted text-capitalize">Charleston</span></h5>
-                                <p class="text-muted text-center mb-0">“I feel confident imposing change on myself. It's
-                                    a lot more fun progressing than
-                                    looking back. That's why I ultricies enim at malesuada nibh diam on tortor neaded to
-                                    throw curve balls.” </p>
+                                <h5 class="text-center text-uppercase mb-3"> Received in: <?php echo ($award['Year']); ?></h5>
+                                <p class="text-muted text-center mb-0"><?php echo ($award['Award']); ?></p>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-box mt-4">
-                        <div class="testimonial-decs p-4">
-                            <div class="testi-icon">
-                                <i class="mdi mdi-format-quote-open display-1"></i>
-                            </div>
-                            <img src="images/testimonials/user-2.jpg" alt=""
-                                class="img-fluid mx-auto d-block img-thumbnail rounded-circle mb-4">
-                            <div class="p-1">
-                                <h5 class="text-center text-uppercase mb-3">Laurie Bell - <span
-                                        class="text-muted text-capitalize">Worcester</span></h5>
-                                <p class="text-muted text-center mb-0">“Our task must be to free ourselves by widening
-                                    our circle of compassion to embrace
-                                    all living creatures and the whole of quis consectetur nunc sit amet semper justo.
-                                    nature and its beauty.” </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-box mt-4">
-                        <div class="testimonial-decs p-4">
-                            <div class="testi-icon">
-                                <i class="mdi mdi-format-quote-open display-1"></i>
-                            </div>
-                            <img src="images/testimonials/user-3.jpg" alt=""
-                                class="img-fluid mx-auto d-block img-thumbnail rounded-circle mb-4">
-                            <div class="p-1">
-                                <h5 class="text-center text-uppercase mb-3">Howard Kelley - <span
-                                        class="text-muted text-capitalize">Lynchburg</span></h5>
-                                <p class="text-muted text-center mb-0">“I've learned that people will forget what you
-                                    said, people will forget what you did,
-                                    but people will never forget how donec in efficitur lectus, nec lobortis metus you
-                                    made them feel.” </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </section>
