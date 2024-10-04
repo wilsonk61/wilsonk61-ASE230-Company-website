@@ -1,4 +1,9 @@
+<?php   
+require_once 'lib/text_read_function.php';
+require_once 'lib/csv_read_function.php';
+require_once 'lib/json_read_function.php';
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +35,7 @@
         id="navbar">
         <div class="container">
             <!-- LOGO -->
-            <a class="navbar-brand logo text-uppercase" href="index.html">
+            <a class="navbar-brand logo text-uppercase" href="index.php">
                 <i class="mdi mdi-alien"></i>Hiric
             </a>
 
@@ -73,6 +78,10 @@
     <!-- END NAVBAR -->
 
     <!-- PUT TITLE OF WEBSITE AND MISSION STATEMNT BELOW --TEXT FILE  -->
+	<?php
+		$missionStatementFile = 'Mission_Statement.txt';
+		$MissionStatementContent = readFileContent($missionStatementFile);
+	?>
 
     <!--START HOME-->
     <section class="section bg-home home-half" id="home" data-image-src="images/bg-home.jpg">
@@ -80,9 +89,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-white text-center">
-                    <h1 class="home-title">We love make things amazing and simple</h1>
-                    <p class="pt-3 home-desc mx-auto">Maecenas class semper class semper sollicitudin lectus lorem
-                        iaculis imperdiet aliquam vehicula tempor auctor curabitur pede aenean ornare.</p>
+                    <h1 class="home-title">Our Mission Statement and Promise to You</h1>
+                    <p class="pt-3 home-desc mx-auto"> <?php echo ($MissionStatementContent); ?></p>
                     <!-- Modal -->
                     <div class="modal fade" id="watchvideomodal"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -99,6 +107,11 @@
     <!-- PUT TITLE OF WEBSITE AND MISSION STATEMNT ABOVE --TEXT FILE -->
     
     <!-- PUT OVERVIEW BELOW SOMEHOW -- TEXT FILE -->
+	
+	<?php
+	$OverviewFile = 'Overview.txt';
+	$OverviewContent = readFileContent($OverviewFile);	
+	?>
 
     <!--START FEATURES-->
     <section class="section" id="features">
@@ -106,14 +119,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 order-2 order-lg-1">
                     <div class="features-box mt-5 mt-lg-0">
-                        <h3>A digital web design studio creating modern & engaging online</h3>
-                        <p class="text-muted web-desc">Separated they live in Bookmarksgrove right at the coast of the
-                            Semantics, a large language ocean.</p>
-                        <ul class="text-muted list-unstyled mt-4 features-item-list">
-                            <li class="">We put a lot of effort in design.</li>
-                            <li class="">The most important ingredient of successful website.</li>
-                            <li class="">Submit Your Orgnization.</li>
-                        </ul>
+                        <h3 style="text-align: center;">A Look Into the Future and a Look Into Who we Are</h3>
+                        <p class="text-muted web-desc"><?php echo ($OverviewContent); ?></p>
                         <a href="#" class="btn btn-primary mt-4 waves-effect waves-light">Learn More <i
                                 class="mdi mdi-arrow-right"></i></a>
                     </div>
@@ -131,137 +138,49 @@
     <!-- PUT OVERVIEW ABOVE SOMEHOW -- TEXT FILE -->
         
     <!--SERVICES BELOW-- JSON FILE -->
-
+    <?php
+		$jsonFile = 'Services.json';
+		$services = readJSONFile($jsonFile);
+	?>
     <!--START SERVICES-->
     <section class="section bg-light " id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <h1 class="section-title text-center">Our Services</h1>
+                    <h1 class="section-title text-center">Our Products and Services</h1>
                     <div class="section-title-border mt-3"></div>
-                    <p class="section-subtitle text-muted text-center pt-4 font-secondary">We craft digital, graphic and
-                        dimensional thinking, to create category leading brand experiences that have meaning and add a
-                        value for our clients.</p>
+                    <p class="section-subtitle text-muted text-center pt-4 font-secondary">We offer innovative virtual and 
+                    augmented reality solutions, including immersive educational experiences, thrilling adventures, advanced quantum computing 
+                    services, and online courses in cutting-edge technology.</p>
                 </div>
             </div>
             <div class="row mt-5">
+            <?php foreach ($services['keyProductsAndServices'] as $service) { ?>
                 <div class="col-lg-4 mt-4">
                     <div class="services-box">
                         <div class="d-flex">
                             <i class="pe-7s-diamond text-primary"></i>
                             <div class="ms-4">
-                                <h4>Digital Design</h4>
-                                <p class="pt-2 text-muted">Some quick example text to build on the card title and make
-                                    up the bulk of the card's content. Moltin gives platform.</p>
+                                <h4><?php echo $service['name']; ?></h4>
+                                <p class="pt-2 text-muted"><?php echo $service['description']; ?></p>
+                                <h4>Applications:</h4>
+                                <ul class="text-muted">
+                                    <?php foreach ($service['applications'] as $application) { ?>
+                                        <li>
+                                            <p><strong><?php echo $application['name']; ?>:</strong>
+                                            <?php echo $application['description']; ?></p>
+                                        </li>
+                                	<?php } ?>
+                            	</ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="services-box">
-                        <div class="d-flex">
-                            <i class="pe-7s-display2 text-primary"></i>
-                            <div class="ms-4">
-                                <h4>Unlimited Colors</h4>
-                                <p class="pt-2 text-muted">Credibly brand standards compliant users without extensible
-                                    services. Anibh euismod tincidunt laoreet Ipsum passage.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="services-box">
-                        <div class="d-flex">
-                            <i class="pe-7s-piggy text-primary"></i>
-                            <div class="ms-4">
-                                <h4>Strategy Solutions</h4>
-                                <p class="pt-2 text-muted">Separated they live in Bookmarksgrove right at the coast of
-                                    the Semantics, and large language ocean neary regelia.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 mt-4">
-                    <div class="services-box">
-                        <div class="d-flex">
-                            <i class="pe-7s-science text-primary"></i>
-                            <div class="ms-4">
-                                <h4>Awesome Support</h4>
-                                <p class="pt-2 text-muted">It is a paradisematic country, in which roasted parts of
-                                    sentences fly into your mouth leave for the far World.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="services-box">
-                        <div class="d-flex">
-                            <i class="pe-7s-news-paper text-primary"></i>
-                            <div class="ms-4">
-                                <h4>Truly Multipurpose</h4>
-                                <p class="pt-2 text-muted">Even the all-powerful Pointing has no control about the blind
-                                    texts it is an almost unorthographic.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="services-box">
-                        <div class="d-flex">
-                            <i class="pe-7s-plane text-primary"></i>
-                            <div class="ms-4">
-                                <h4>Easy to customize</h4>
-                                <p class="pt-2 text-muted">Question Marks and devious Semikoli, but the Little Blind
-                                    Text didn’t listen. She packed her seven versalia.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4 mt-4">
-                    <div class="services-box">
-                        <div class="d-flex">
-                            <i class="pe-7s-arc text-primary"></i>
-                            <div class="ms-4">
-                                <h4>Pixel Perfect Design</h4>
-                                <p class="pt-2 text-muted">There are many variations of passages of Lorem Ipsum
-                                    available, but the majority have suffered alteration.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="services-box">
-                        <div class="d-flex">
-                            <i class="pe-7s-tools text-primary"></i>
-                            <div class="ms-4">
-                                <h4>Perfect Toolbox</h4>
-                                <p class="pt-2 text-muted">Hampden-Sydney College in Virginia, looked up one of the more
-                                    obscure Latin words, consectetur.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="services-box">
-                        <div class="d-flex">
-                            <i class="pe-7s-timer text-primary"></i>
-                            <div class="ms-4">
-                                <h4>Awesome Design</h4>
-                                <p class="pt-2 text-muted">All the Lorem Ipsum generators on the Internet tend to repeat
-                                    predefined chunks as necessary.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <?php } ?>
             </div>
         </div>
     </section>
-    <!--START SERVICES-->
+    <!--END SERVICES-->
     
     <!--SERVICES ABOVE-- JSON FILE -->
     
@@ -273,64 +192,32 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="about-title mx-auto text-center">
-                        <h2>A Digital web studio creating stunning &amp; Engaging online
-                            Experiences </h2>
-                        <p class="text-muted pt-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                            commodo ligula eget dolor.
-                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus donec various versions have evolved quam felis.</p>
+                        <h2> Our Team </h2>
+                        <p class="text-muted pt-4">Our dynamic team, led by industry pioneers and experts in their respective fields, 
+                        combines innovative vision, technological expertise, and design excellence to drive Starluxe's mission of 
+                        revolutionizing technology and education globally.</p>
                     </div>
                 </div>
             </div>
+            <?php
+				$CSVFile = 'Team.csv';
+				$teamMembers = readCSVFile($CSVFile);
+			?>
             <div class="row mt-5">
+            <?php foreach ($teamMembers as $index => $member) { ?>
                 <div class="col-lg-3 col-sm-6">
                     <div class="team-box text-center">
                         <div class="team-wrapper">
                             <div class="team-member">
-                                <img alt="" src="images/team/img-1.jpg" class="img-fluid rounded">
+                                <img alt="" src="images/team/img-<?= $index + 1 ?>.jpg" class="img-fluid rounded">
                             </div>
                         </div>
-                        <h4 class="team-name">Frank Johnson</h4>
-                        <p class="text-uppercase team-designation">CEO</p>
+                        <h4 class="team-name"><?php echo ($member['Name']); ?></h4> <!-- Name -->
+                    	<p class="text-uppercase team-designation"><?php echo ($member['Position']); ?></p> <!-- Position -->
+                    	<p class="team-description"><?php echo ($member['Description']); ?></p> <!-- Description -->
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-box text-center">
-                        <div class="team-wrapper">
-                            <div class="team-member">
-                                <img alt="" src="images/team/img-2.jpg" class="img-fluid rounded">
-                            </div>
-                        </div>
-                        <h4 class="team-name">Elaine Stclair</h4>
-                        <p class="text-uppercase team-designation">Designer</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-box text-center">
-                        <div class="team-wrapper">
-                            <div class="team-member">
-                                <img alt="" src="images/team/img-3.jpg" class="img-fluid rounded">
-                            </div>
-                        </div>
-                        <h4 class="team-name">Wanda Arthur</h4>
-                        <p class="text-uppercase team-designation">Developer</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-box text-center">
-                        <div class="team-wrapper">
-                            <div class="team-member">
-                                <img alt="" src="images/team/img-4.jpg" class="img-fluid rounded">
-                            </div>
-                        </div>
-                        <h4 class="team-name">Joshua Stemple</h4>
-                        <p class="text-uppercase team-designation">Manager</p>
-                    </div>
-                </div>
-
+				<?php } ?>
             </div>
         </div>
     </section>
@@ -340,79 +227,38 @@
     
     <!--CHANGE REVIEWS TO AWARDS BELOW -- CSV FILE -->
 
+	<?php
+		$CSVFile = 'Awards.csv';
+		$awards = readCSVFile($CSVFile);
+	?>
     <!--START TESTIMONIAL-->
-    <section class="section" id="testi">
+    <section class="section bg-light" id="testi">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <h1 class="section-title text-center">What they've said</h1>
+                    <h1 class="section-title text-center">Awards</h1>
                     <div class="section-title-border mt-3"></div>
-                    <p class="section-subtitle text-muted text-center font-secondary pt-4">The Big Oxmox advised her not
-                        to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli.
+                    <p class="section-subtitle text-muted text-center font-secondary pt-4">We take immense pride in our 
+                    multiple awards, which reflect our commitment to innovation and excellence in technology.
                     </p>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-4">
+            <?php foreach ($awards as $index => $award) { ?>
                 <div class="col-lg-4">
                     <div class="testimonial-box mt-4">
                         <div class="testimonial-decs p-4">
-                            <div class="testi-icon">
-                                <i class="mdi mdi-format-quote-open display-1"></i>
-                            </div>
-                            <img src="images/testimonials/user-1.jpg" alt=""
+                        <img src="images/award.jpg" alt=""
                                 class="img-fluid mx-auto d-block img-thumbnail rounded-circle mb-4">
                             <div class="p-1">
-                                <h5 class="text-center text-uppercase mb-3">Dennis Williams - <span
-                                        class="text-muted text-capitalize">Charleston</span></h5>
-                                <p class="text-muted text-center mb-0">“I feel confident imposing change on myself. It's
-                                    a lot more fun progressing than
-                                    looking back. That's why I ultricies enim at malesuada nibh diam on tortor neaded to
-                                    throw curve balls.” </p>
+                                <h5 class="text-center text-uppercase mb-3"> Received in: <?php echo ($award['Year']); ?></h5>
+                                <p class="text-muted text-center mb-0"><?php echo ($award['Award']); ?></p>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-box mt-4">
-                        <div class="testimonial-decs p-4">
-                            <div class="testi-icon">
-                                <i class="mdi mdi-format-quote-open display-1"></i>
-                            </div>
-                            <img src="images/testimonials/user-2.jpg" alt=""
-                                class="img-fluid mx-auto d-block img-thumbnail rounded-circle mb-4">
-                            <div class="p-1">
-                                <h5 class="text-center text-uppercase mb-3">Laurie Bell - <span
-                                        class="text-muted text-capitalize">Worcester</span></h5>
-                                <p class="text-muted text-center mb-0">“Our task must be to free ourselves by widening
-                                    our circle of compassion to embrace
-                                    all living creatures and the whole of quis consectetur nunc sit amet semper justo.
-                                    nature and its beauty.” </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-box mt-4">
-                        <div class="testimonial-decs p-4">
-                            <div class="testi-icon">
-                                <i class="mdi mdi-format-quote-open display-1"></i>
-                            </div>
-                            <img src="images/testimonials/user-3.jpg" alt=""
-                                class="img-fluid mx-auto d-block img-thumbnail rounded-circle mb-4">
-                            <div class="p-1">
-                                <h5 class="text-center text-uppercase mb-3">Howard Kelley - <span
-                                        class="text-muted text-capitalize">Lynchburg</span></h5>
-                                <p class="text-muted text-center mb-0">“I've learned that people will forget what you
-                                    said, people will forget what you did,
-                                    but people will never forget how donec in efficitur lectus, nec lobortis metus you
-                                    made them feel.” </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </section>
